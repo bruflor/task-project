@@ -1,4 +1,4 @@
-// import React, { useState } from "react";
+import React, { useState } from "react";
 
 // import CourseGoalList from "./components/CourseGoals/CourseGoalList/CourseGoalList";
 // import CourseInput from "./components/CourseGoals/CourseInput/CourseInput";
@@ -57,12 +57,17 @@ import "./App.css";
 // };
 
 const App = () => {
-  const mockUsers = [""];
+  const [usersList, setUsersList] = useState([]);
+  const addUserHandler = (uName, uAge) => {
+    setUsersList((prevUsersList) => {
+      return [...prevUsersList, { name: uName, age: uAge }];
+    });
+  };
 
   return (
     <div>
-      <AddUser />
-      <UsersList users={mockUsers} />
+      <AddUser onAddUser={addUserHandler} />
+      <UsersList users={usersList} />
     </div>
   );
 };
