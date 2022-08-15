@@ -3,6 +3,7 @@
 // import CourseGoalList from "./components/CourseGoals/CourseGoalList/CourseGoalList";
 // import CourseInput from "./components/CourseGoals/CourseInput/CourseInput";
 import AddUser from "./components_user/AddUser";
+import UsersList from "./components_user/UsersList";
 import "./App.css";
 
 // const App = () => {
@@ -56,9 +57,12 @@ import "./App.css";
 // };
 
 const App = () => {
+  const mockUsers = [""];
+
   return (
     <div>
       <AddUser />
+      <UsersList users={mockUsers} />
     </div>
   );
 };
